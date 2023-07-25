@@ -1,0 +1,134 @@
+
+<!--Include header-->
+<%- include('include/_header')%> 
+
+    <!--Main Site-->
+      <!--Main section-->
+      <section>
+        <!--swiper-->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="img/view-outside-airplane-qa-3840x2160.jpg" alt="window">
+                    <span>OUR DREAM</span>
+                    <p>At KENYAN AIRLINE, our mission is to connect the world, inspire travel, and provide exceptional air transportation services to passengers and cargo, while maintaining the highest standards of safety, reliability, and customer satisfaction. </p>
+                    <button>Learn More</button>
+                </div>
+                <div class="swiper-slide slider2">
+                    <img src="img/20508896.jpg" alt="window2">
+                    <span>THIS IS OUR VISION</span>
+                    <p>Our vision is to be a leading global airline, recognized for excellence in every aspect of our operations. We strive to be the preferred airline for travelers, business partners, and employees alike, delivering seamless journeys, personalized services, and a passion for aviation that transcends boundaries. </p>
+                    <button>Learn More</button>
+                </div> 
+                <div class="swiper-slide">
+                    <img src="img/20522624.jpg" alt="Airhostess">
+                </div>
+            </div>
+
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+
+        </div>
+    </section>
+    
+    <section>
+        <!--Drop down buttons-->
+        <div class="div2">
+            <span><i class="fa-solid fa-plane-up" style="font-size: 30px;"></i></span>
+            <span class="table-header" style="font-size: 30px;">FIND YOUR FLIGHT</span><br>
+            <div class="mandatory" style="display: block; font-size: 10px;">All fields with * are mandatory</div>  
+            <div class="container">                
+                <button onclick="displayField('one-way')" class="dropbtn" >One way</button>
+                <button onclick="displayField('round-trip')" class="dropbtn" >Round trip</button>  
+                <button onclick="displayField('manage-booking')" class="dropbtn">Cancel Flight</button>
+                <button onclick="displayField('flight-timetable')" class="dropbtn" >Flight Timetable</button>
+            </div>
+            <!--One Way Search menu-->
+            <div class="dropdown">
+                <div id="myDropdown" class="dropdown-content">
+                    <div class="search-container">
+                        <form action="/api/flights" method="GET">
+                            <div class="container">                          
+                                <div class="search-table">
+                                    <div class="one-way round-trip flight-timetable">
+                                        <label for="from">From*</label><br>
+                                        <input type="text" placeholder="City or Airport" name="from" required>
+                                    </div>
+            
+                                    <div class="one-way round-trip flight-timetable">
+                                        <label for="to">To*</label><br>
+                                        <input type="text" placeholder="City or Airport" 
+                                        name="to" required>
+                                    </div>                                    
+                                    <div class="one-way round-trip">
+                                        <label for="promo-code">Promo code</label><br>
+                                        <input type="text" name="promo-code">
+                                    </div>
+                                    <div class="flight-timetable">
+                                        <label for="trip">Trip*</label><br>
+                                        <input type="text" name="trip" list="trip-type">
+                                            <datalist id="trip-type">
+                                            <option value="one-way">
+                                            <option value="round-trip">
+                                            </datalist>
+                                    </div>
+                                    <div class="one-way round-trip flight-timetable">
+                                        <label for="date">Departure Date*</label><br>
+                                        <input type="date" name="date" placeholder="Departure" required>
+                                    </div>   
+
+                                    <div class="round-trip">
+                                        <label for="return-date">Return Date*</label><br>
+                                        <input type="date" name="return-date" placeholder="Return" required>
+                                    </div>
+                                    <div class="flight-timetable">
+                                        <label for="return-date">Return Date</label><br>
+                                        <input type="date" name="return-date" placeholder="Return">
+                                    </div>
+                                    <div class="manage-booking"> 
+                                        <label for="fname">First Name*</label><br>
+                                        <input type="text" placeholder="first name" name="fname" required>
+                                    </div>
+            
+                                    <div class="manage-booking">
+                                        <label for="br-number">Booking reference number*</label><br>
+                                        <input type="text" placeholder="City or Airport" 
+                                        name="br-number" required>
+                                    </div>
+                                    
+                                    <div class="manage-booking">
+                                        <label for="ticket">Ticket number</label><br>
+                                        <input type="text" name="ticknet-no">
+                                    </div>
+
+                                    <div class="manage-booking round-trip flight-timetable one-way">
+                                        <button type="submit" style="margin-top: 25px;">Search flight</button>
+                                    </div>
+                                                           
+                                </div>
+            
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+
+
+
+        </div>
+    </section>
+
+    
+
+    
+
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+
+    <script src="js/index.js"></script>
+<!--include footer-->
+<%- include('include/_footer')%> 
