@@ -1,0 +1,44 @@
+
+<!--include header-->
+<%- include('include/_adminHeader')%> 
+<!--include header-->
+
+  <!-- Main Site -->
+  <main id="site-main">
+    <div class="container">
+        <div class="box-nav d-flex justify-between add-flight">
+            <a href="/addFlight" class="border-shadow">
+                <span class="text-gradient">Add-Flight<i class="fa-solid fa-plane" style="padding-left:10px;"></i></span>
+            </a>          
+        </div>
+
+        <!-- form handling -->
+        <form action="/" method="POST">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Flight Number</th>
+                        <th>Departure Date</th>
+                        <th>Departure City</th>
+                        <th>Departure time</th>
+                        <th>Destination Time</th>
+                        <th>Destination City</th>
+                        <td>Update || Delete</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%- include('include/_showFlight') %>
+                </tbody>
+            </table>
+        </form>
+ 
+    </div>
+</main>
+<!-- /Main Site -->
+
+
+<script src=""></script>
+<!--include footer-->
+<%- include('include/_footer')%> 
+<!--include footer-->

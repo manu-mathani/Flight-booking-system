@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KENYAN AIRLINES</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="icon" href="img/logo.png" type="image/x-icon">
+
+</head>
+<body>
+    
+    <div class="result-container">
+        <span id="title">Flight results</span>
+        <span id="date"><p><%= flights[0].departureDate%></p></span>
+        <div class="header">
+            <div class="from">
+                <span>Departure <i class="fa-solid fa-plane-departure"></i></span>
+                <p><%= flights[0].departureCity%></p>                
+            </div>
+            <div class="deco-line"></div>
+
+            <div class="to">
+                <span>Destination <i class="fa-solid fa-plane-arrival"></i></span>
+                <p><%= flights[0].destinationCity%></p>
+                <p></p>
+            </div>
+        </div>
+        <div class="results-table">
+            <form action="/" method="POST">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th></th>
+                            <th>Flight Number</th>
+                            <th>Departure Tume</th>
+                            <th>Arrival</th>
+                            <th>Regular</th>
+                            <th>Economy</th>
+                            <th>Business</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%- include('include/_results')%> 
+                    </tbody>
+                </table>
+            </form>
+        </div>
+
+    </div>
+
+<!--include footer-->
+<%- include('include/_footer')%> 

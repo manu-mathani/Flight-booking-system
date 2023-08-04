@@ -1,4 +1,3 @@
-
 function openNav() {
   document.getElementById("mySidebar").style.width = "50%";
   document.getElementById("hamburger").style.marginLeft = "250px";
@@ -31,10 +30,10 @@ var swiper = new Swiper(".mySwiper", {
   slidesPerView: 1,
   spaceBetween: 30,
   centerSlides: true,
-  /*autoplay: {
+  autoplay: {
     delay: 2500,
     disableOnInteraction: false
-  },*/
+  },
   loop: true,
   pagination: {
     el: ".swiper-pagination",
@@ -56,3 +55,28 @@ $(document).ready(function () {
       $(this).addClass('active');
   });
 });
+
+$("#add_user").submit(function(event){
+  alert("Flight added successfully")})
+//Event listener to filter our query parameters that are empy
+function filterEmptyFields(event) {
+  const form = event.target;
+  const elements = form.elements;
+  const elementsToRemove = [];
+
+  for (let i = 0; i < elements.length; i++) {
+    const element = elements[i];
+
+    // Check if the element is an input field and if it has no value
+    if (element.tagName === 'INPUT' && element.value.trim() === '') {
+      elementsToRemove.push(element);
+    }
+  }
+
+  // Remove elements without values from the form
+  elementsToRemove.forEach((element) => {
+    element.remove();
+  });
+}
+
+

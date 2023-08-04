@@ -1,0 +1,11 @@
+<% for (var i = 0; i < flights.length; i++) { %>
+    <tr>    
+        <td><%=i + 1 %></td>    
+        <td><%= flights[i].flightNumber%></td>                    
+        <td><%= flights[i].departureTime%></td>
+        <td><%= flights[i].destinationTime%></td>
+        <td ><a href="/bookflight" id="regular"><%= flights[i].regularPrice%></a></td>
+        <td ><a href="/bookflight" id="economy"><%= flights[i].economyPrice%></a></td>
+        <td ><a href="/bookflight" id="business"><%= flights[i].businessPrice%></a></td>
+    </tr>
+    <% } %>

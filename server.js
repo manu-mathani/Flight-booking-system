@@ -1,5 +1,7 @@
 const express = require('express');
+const session = require("express-session");
 const dotenv = require('dotenv');
+const crypto = require('crypto');
 const morgan = require('morgan');
 const cors = require("cors");
 const bodyparser = require("body-parser");
@@ -7,7 +9,7 @@ const path = require('path');
 
 
 const connectDB = require('./server/database/connection')
-const flightsRoutes = require("./server/controller/controller");
+
 
 const app = express();
 
@@ -17,7 +19,22 @@ const PORT = process.env.PORT || 8080
 // log requests
 app.use(morgan('tiny'));
 app.use(cors());
-app.use("/api", flightsRoutes);
+
+// Generate a secure secret key
+const generateSecretKey = () => {
+    const length = 32; // You can choose a different length based on your needs
+    return crypto.randomBytes(length).toString('hex');
+};
+  
+const secretKey = generateSecretKey();
+app.use(
+    session({
+      secret: secretKey, // Replace with a secure secret key for session encryption
+      resave: false,
+      saveUninitialized: true
+    })
+  );
+
 
 //mongo db connection
 connectDB()

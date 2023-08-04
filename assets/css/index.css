@@ -239,7 +239,98 @@ section{
     font-size: 14px;
 }
 
+/*Search result table*/
 
+.result-container{
+    max-width: 1092px;
+    margin: auto;
+    background: #ddd;
+    padding: 50px;
+}
+.result-container #title{
+    color: #fff;
+    background:#007bff;
+    padding: 10px 0 0 0;
+    font-size:30px;
+    display: flex;
+    justify-content: center;
+}
+.result-container #date{
+    font-size:20px;
+    display: flex;
+    justify-content: center;
+}
+
+.header {
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+
+  
+  .deco-line {
+    max-width: 500px;
+    flex: 1;
+    height: 2px;
+    background-color: black;
+    position: relative;
+  }
+  
+  .deco-line::before,
+  .deco-line::after {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: black;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .deco-line::before {
+    left: -5px;
+  }
+  
+  .deco-line::after {
+    right: -5px;
+  }
+
+ .result-container .fa-solid {
+    font-size: 24px; /* Adjust the font size as needed */
+    color: #333;
+}
+
+.results-table{
+  margin-top: 50px;
+}
+table{
+  border-spacing:0 ;
+  width: 100%;
+}
+.table td{
+  padding: 40px;
+}
+
+.table #regular{
+  background: orange;
+}
+.table #economy{
+  background: red;
+}
+.table #business{
+  background: green;
+}
+.table a{
+  color: #fff;
+  padding: 30px;
+  text-decoration:none ;
+  border-radius: 10px;
+  
+}
 
 
 
@@ -306,6 +397,35 @@ section{
     .div2{
         width: 100%;
     }
+    .deco-line {
+        display: none;
+      }
+      
+      .thead-dark {
+          display: none;
+      }
+    
+      
+      tbody tr td {
+          display: block;
+          width: 100%;
+      }
+      .table td{
+        padding: 5px;
+    
+      }
+    
+      
+      tbody tr {
+          margin-bottom: 15px; 
+      }
+    
+      tbody tr td a {
+          display: block;
+          width: 30px;
+      }
+
+
 
 }
 @media screen and (max-width: 600px) { 

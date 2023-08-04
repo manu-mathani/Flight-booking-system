@@ -1,0 +1,74 @@
+
+<!-- include header -->
+<%- include('include/_adminHeader') %>
+<!-- /include header -->
+
+  <!-- Main Site -->
+  <main id="site-main">
+    <div class="container">
+        <div class="box-nav d-flex justify-between">
+           <div class="filter">
+               <a href="/"><i class="fas fa-angle-double-left"></i> All Users</a>
+           </div>
+        </div>
+        <div class="form-title text-center">
+            <h2 class="text-dark">Update Flight</h2>
+            <span class="text-light">Use the below form to update Flight information</span>
+        </div>
+
+        <!-- update user form -->
+         <!-- form handling -->
+        <form action="/admin/api/flights" method="POST" id="update_user"> 
+            <div class="new_user">
+                <div class="form-group">
+                    <label for="f-number" class="text-light">Flight Number</label>
+                    <input type="hidden" name="id" value="<% flights._id%>">
+                    <input type="text" name="f-number" value="<% flights.flightNumber %>" placeholder="FL009">
+                </div>
+                <div class="form-group">
+                    <label for="dep-date" class="text-light">Departure Date</label>
+                    <input type="date" name="dep-date" value="" placeholder="28/07/23">
+                </div>
+                <div class="form-group">
+                    <label for="dep-city" class="text-light">Departure City</label>
+                    <input type="text" name="dep-city" value="" placeholder="New York">
+                </div>
+                <div class="form-group">
+                    <label for="dep-time" class="text-light">Departure Time</label>
+                    <input type="text" name="dep-time" value="" placeholder="1:30 pm">            
+                </div>
+                <div class="form-group">
+                    <label for="des-city" class="text-light">Destination City</label>
+                    <input type="text" name="des-city" value="" placeholder="Nairobi">
+                </div>
+        
+                <div class="form-group">
+                    <label for="des-time" class="text-light">Destination Time</label>
+                    <input type="text" name="des-time" value="" placeholder="3:30 pm">
+                </div>
+                <div class="form-group">
+                    <label for="reg-price" class="text-light">Regular Price</label>
+                    <input type="text" name="reg-price" value="" placeholder="$200">
+                </div>
+                <div class="form-group">
+                    <label for="econ-price" class="text-light">Economy Price</label>
+                    <input type="text" name="econ-price" value="" placeholder="$350">
+                </div>
+                <div class="form-group">
+                    <label for="business-price" class="text-light">Business Price</label>
+                    <input type="text" name="business-price" value="" placeholder="$600">
+                </div>
+        
+                <div class="form-group">
+                    <button type="submit" class="btn text-dark update">Save</button>
+                </div>
+
+            </div>
+        </form>
+       
+    </div>
+</main>
+<!-- /Main Site -->
+
+<!-- include footer -->
+<%- include('include/_footer') %>

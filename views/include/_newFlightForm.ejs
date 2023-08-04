@@ -1,0 +1,48 @@
+ <!-- form handling -->
+ <form action="/admin/api/flights" method="POST" id="add_user">
+    <div class="new_user">
+        <div class="form-group">
+            <label for="fNumber" class="text-light">Flight Number</label>
+            <input type="hidden" name="id" value="">
+            <input type="text" name="fNumber" value="" placeholder="FL009">
+        </div>
+        <div class="form-group">
+            <label for="depDate" class="text-light">Departure Date</label>
+            <input type="date" name="depDate" value="" placeholder="28/07/23">
+        </div>
+        <div class="form-group">
+            <label for="depCity" class="text-light">Departure City</label>
+            <input type="text" name="depCity" value="" placeholder="New York">
+        </div>
+        <div class="form-group">
+            <label for="depTime" class="text-light">Departure Time</label>
+            <input type="text" name="depTime" value="" placeholder="1:30 pm">            
+        </div>
+        <div class="form-group">
+            <label for="desCity" class="text-light">Destination City</label>
+            <input type="text" name="desCity" value="" placeholder="Nairobi">
+        </div>
+
+        <div class="form-group">
+            <label for="desTime" class="text-light">Destination Time</label>
+            <input type="text" name="desTime" value="" placeholder="3:30 pm">
+        </div>
+        <div class="form-group">
+            <label for="regPrice" class="text-light">Regular Price</label>
+            <input type="text" name="regPrice" value="" placeholder="$200">
+        </div>
+        <div class="form-group">
+            <label for="econPrice" class="text-light">Economy Price</label>
+            <input type="text" name="econPrice" value="" placeholder="$350">
+        </div>
+        <div class="form-group">
+            <label for="businessPrice" class="text-light">Business Price</label>
+            <input type="text" name="businessPrice" value="" placeholder="$600">
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn text-dark update">Save</button>
+        </div>
+
+    </div>
+</form>

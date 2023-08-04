@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
-var schema = new mongoose.Schema({
+//flight schema
+var flightSchema = new mongoose.Schema({
     flightNumber: {
         type: String,
         required: true
@@ -42,33 +43,7 @@ var schema = new mongoose.Schema({
 })
 
 
-/**
- * 
-var schema = new mongoose.Schema({
-    firstName: {
-        type: String,
-        required: true
-    },
-    lastName: {
-        type: String,
-        required: true
-    },
-    phoneNumber: {
-        type: String,
-        required: true
-    }, 
-    email: {
-        type: String,
-        required: true
-    },
-    emergencyNumber: {
-        type: String,
-        required: true        
-    }
-    
-})
- */
 
-const Passangerdb = mongoose.model("passangerdb", schema);
+const Flightdb = mongoose.model("flightsdb", flightSchema);
 
-module.exports = Passangerdb;
+module.exports = Flightdb;

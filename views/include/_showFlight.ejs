@@ -1,0 +1,22 @@
+<!--Flight display table fon admin main page-->
+<% for(var i = 0; i<flights.length; i++){ %>
+    <tr>
+        <td><%=i + 1 %></td></td>
+        <td><%= flights[i].flightNumber%></td>
+        <td><%= flights[i].departureDate%></td>
+        <td><%= flights[i].departureCity%></td>
+        <td><%= flights[i].departureTime%></td>
+        <td><%= flights[i].destinationTime%></td>
+        <td><%= flights[i].destinationCity%></td>
+        
+
+        <td>
+            <a href="/updateFlight?id=<%= flights[i]._id%>" class="btn border-shadow update">
+                <span class="text-gradient"><i class="fa-solid fa-pen"></i></span>
+            </a>
+            <a class="btn border-shadow delete">
+                <span class="text-gradient"><i class="fas fa-times"></i></span>
+            </a>
+        </td>
+    </tr>
+<% } %>
